@@ -1,5 +1,7 @@
 var React = require('react');
 var Link = require('react-router-dom').Link;
+var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 function MovieList(props) {
 	return (
@@ -24,13 +26,44 @@ function MovieList(props) {
 	)
 }
 
+MovieList.propTypes = {
+	movies: PropTypes.array.isRequired
+}
+
 class Home extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			movies: null
+		}
+	}
+
+	componentDidMount() {
+		api.fetchTopMovies()
+			.then((movies) => {
+
+				console.log(movies)
+				this.setState(function(){
+					return {
+						movies: movies
+					}
+				})
+			});
+	}
+
 	render() {
 		return (
 			<div>
 				<h1 className='text-center'>Top 10 Rated Movies</h1>
 
-				<MovieList />
+				{
+					!this.state.movies ?
+						'Loading...'
+					:
+						<MovieList />
+				}
+
 			</div>
 		)
 	}

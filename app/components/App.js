@@ -16,6 +16,8 @@ class App extends React.Component {
 						<Route exact path='/' component={Home} />
 						<Route exact path='/details' component={MovieDetails} />
 					</Switch>
+
+					<p>Data from: <a href='http://www.omdbapi.com/'>OMDb API</a></p>
 				</div>
 			</Router>
 		)

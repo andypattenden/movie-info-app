@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+	"build:dev": "webpack",
+	"build:dist": "NODE_ENV='production' webpack -p"
   },
   "babel": {
     "presets": [
@@ -35,6 +37,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "prop-types": "^15.5.10",
+    "query-string": "^4.3.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1"

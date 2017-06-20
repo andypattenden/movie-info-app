@@ -5,24 +5,29 @@ var api = require('../utils/api');
 
 function MovieList(props) {
 	return (
-		<ol>
-			<li>
-				<div className='row'>
-					<div className='col-sm-1'>
-						<img src='' />
+		<ul>
+		{props.movies.map(function(movie, index){
+			return (
+				<li key={movie.Title}>
+					#{index + 1}
+					<div className='row'>
+						<div className='col-sm-1'>
+							<img className='img-responsive' src={movie.Poster} />
+						</div>
+						<div className='col-sm-6'>
+							{movie.Title} ({movie.Year})
+						</div>
+						<div className='col-sm-2'>
+							Score
+						</div>
+						<div className='col-sm-3'>
+							<Link to='/details'>View Details</Link>
+						</div>
 					</div>
-					<div className='col-sm-6'>
-						Title (year)
-					</div>
-					<div className='col-sm-2'>
-						Score
-					</div>
-					<div className='col-sm-3'>
-						<Link to='/details'>View Details</Link>
-					</div>
-				</div>
-			</li>
-		</ol>
+				</li>
+			)
+		})}
+		</ul>
 	)
 }
 
@@ -42,8 +47,6 @@ class Home extends React.Component {
 	componentDidMount() {
 		api.fetchTopMovies()
 			.then((movies) => {
-
-				console.log(movies)
 				this.setState(function(){
 					return {
 						movies: movies
@@ -61,7 +64,7 @@ class Home extends React.Component {
 					!this.state.movies ?
 						'Loading...'
 					:
-						<MovieList />
+						<MovieList movies={this.state.movies} />
 				}
 
 			</div>

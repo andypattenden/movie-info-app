@@ -5,7 +5,7 @@ var api = require('../utils/api');
 
 function MovieList(props) {
 	return (
-		<ul>
+		<ul className='list-unstyled'>
 		{props.movies.map(function(movie, index){
 			return (
 				<li key={movie.Title}>
@@ -18,7 +18,7 @@ function MovieList(props) {
 							{movie.Title} ({movie.Year})
 						</div>
 						<div className='col-sm-2'>
-							Score
+							Score: {movie.imdbRating}
 						</div>
 						<div className='col-sm-3'>
 							<Link to='/details'>View Details</Link>
@@ -45,7 +45,8 @@ class Home extends React.Component {
 	}
 
 	componentDidMount() {
-		api.fetchTopMovies()
+		api
+			.fetchTopMovies()
 			.then((movies) => {
 				this.setState(function(){
 					return {

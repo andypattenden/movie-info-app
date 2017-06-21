@@ -14,7 +14,7 @@ function MovieList(props) {
 			var rank = index + 1;
 			return (
 				<li key={movie.Title}>
-					<div className='row text-center'>
+					<article className='row text-center'>
 						<div className='col-sm-1 rank'>
 							#{rank}
 						</div>
@@ -38,7 +38,7 @@ function MovieList(props) {
 								View Details &gt;
 							</Link>
 						</div>
-					</div>
+					</article>
 				</li>
 			)
 		})}
@@ -75,9 +75,9 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<div className='page-header'>
+				<header className='page-header'>
 					<h1 className='text-center'>IMDB Top 10 Rated Movies</h1>
-				</div>
+				</header>
 
 				{
 					// Renders 'Loading' until the component has fetched the movies data

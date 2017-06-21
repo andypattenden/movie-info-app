@@ -18,7 +18,9 @@ class App extends Component {
 						<Route exact path='/details' component={MovieDetails} />
 					</Switch>
 
-					<p>Data from: <a href='http://www.omdbapi.com/'>OMDb API</a></p>
+					<footer>
+						<p>Data from: <a href='http://www.omdbapi.com/'>OMDb API</a></p>
+					</footer>
 				</div>
 			</Router>
 		)

@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <div
+  <header
     className="page-header"
   >
     <h1
@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
     >
       IMDB Top 10 Rated Movies
     </h1>
-  </div>
+  </header>
   <p
     className="loading"
   >

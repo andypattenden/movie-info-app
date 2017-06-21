@@ -10,7 +10,7 @@ import '../styles/MovieDetails.css';
 
 function MovieHeader(props) {
 	return (
-		<div className='page-header'>
+		<header className='page-header'>
 			<div className='row'>
 				<h1 className='col-sm-9'>#{props.rank} {props.title} <small>({props.year})</small></h1>
 				<div className='col-sm-3'>
@@ -33,7 +33,7 @@ function MovieHeader(props) {
 					{props.released}
 				</div>
 			</div>
-		</div>
+		</header>
 	)
 }
 
@@ -51,18 +51,20 @@ MovieHeader.propTypes = {
 
 function MovieBody(props) {
 	return (
-		<div className='row'>
+		<section className='row'>
 			<div className='col-sm-4'>
-				<img
-					className='img-responsive'
-					alt={`${props.title} poster`}
-					src={props.poster}
-				/>
+				<figure>
+					<img
+						className='img-responsive'
+						alt={`${props.title} poster`}
+						src={props.poster}
+					/>
+				</figure>
 			</div>
 			<div className='col-sm-8'>
 				<p>{props.plot}</p>
 			</div>
-		</div>
+		</section>
 	)
 }
 
@@ -74,15 +76,18 @@ MovieBody.propTypes = {
 
 function CastAndCrew(props) {
 	return (
-		<div>
+		<section>
 			<h2>Cast &amp; Crew</h2>
-			<h3>Directed by</h3>
-			{props.director}
+
+			<section>
+				<h3>Directed by</h3>
+				{props.director}
+			</section>
 
 			<Writers writers={props.writers} />
 			<Actors actors={props.actors} />
 
-		</div>
+		</section>
 	)
 }
 
@@ -94,14 +99,14 @@ CastAndCrew.propTypes = {
 
 function Actors(props) {
 	return (
-		<div>
+		<section>
 			<h3>Actors</h3>
 			<ul>
 				{props.actors.map((actor) =>{
 					return <li key={actor}>{actor}</li>
 				})}
 			</ul>
-		</div>
+		</section>
 	)
 }
 
@@ -111,14 +116,14 @@ Actors.propTypes = {
 
 function Writers(props) {
 	return (
-		<div>
+		<section>
 			<h3>Writers</h3>
 			<ul>
 				{props.writers.map((writer) =>{
 					return <li key={writer}>{writer}</li>
 				})}
 			</ul>
-		</div>
+		</section>
 	)
 }
 
@@ -183,7 +188,7 @@ class MovieDetails extends Component {
 					!this.state.movie ?
 						<Loading text='Loading movie details...' />
 					:
-						<div className='movie-details'>
+						<article className='movie-details'>
 							<MovieHeader
 								rank={this.state.rank}
 								title={movie.Title}
@@ -214,7 +219,7 @@ class MovieDetails extends Component {
 									/>
 								</div>
 							</div>
-						</div>
+						</article>
 				}
 
 				<p><Link to='/'>&lt; Back to list</Link></p>

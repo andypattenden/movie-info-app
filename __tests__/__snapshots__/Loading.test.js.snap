@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with default text 1`] = `
+<p
+  className="loading"
+>
+  Loading
+</p>
+`;
+
+exports[`renders correctly with specified text 1`] = `
+<p
+  className="loading"
+>
+  Downloading...
+</p>
+`;

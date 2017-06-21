@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build:dev": "webpack",
-    "build:dist": "NODE_ENV='production' webpack -p"
+    "build:dist": "NODE_ENV='production' webpack -p",
+    "test": "jest"
   },
   "babel": {
     "presets": [
@@ -35,6 +36,12 @@
       "sourceType": "module"
     }
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "prop-types": "^15.5.10",
@@ -53,6 +60,8 @@
     "eslint": "^4.0.0",
     "eslint-plugin-react": "^7.1.0",
     "html-webpack-plugin": "^2.28.0",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.5.0"

@@ -13,15 +13,14 @@ Node and npm
 ### Developer Mode
 1. Run `npm start`
 
-## Running
-### Developer Mode
-1. Run `npm start`
-
 ### Build for Development
 1. Run `npm build:dev`
 
 ### Build for Production
 1. Run `npm build:dist`
+
+### Tests
+1. Run `npm run test`
 
 ## Technologies Used
 * React

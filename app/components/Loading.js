@@ -1,9 +1,9 @@
-var React = require('react');
-var PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-require('../styles/Loading.css');
+import '../styles/Loading.css';
 
-class Loading extends React.Component {
+class Loading extends Component {
 	constructor(props) {
 		super(props);
 
@@ -29,4 +29,4 @@ Loading.defaultProps = {
 	text: 'Loading'
 };
 
-module.exports = Loading;
+export default Loading;

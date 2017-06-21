@@ -1,4 +1,4 @@
-var axios = require('axios');
+import axios from 'axios';
 
 var movieDataURI = window.encodeURI('/data/movies.json');
 
@@ -16,7 +16,7 @@ function getMovieData(cb) {
 		.catch(handleError)
 }
 
-module.exports = {
+export default {
 	fetchTopMovies: function() {
 		return getMovieData((response) => {
 			return response.data;

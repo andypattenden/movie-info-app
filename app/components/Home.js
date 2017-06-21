@@ -1,11 +1,10 @@
-var React = require('react');
-var Link = require('react-router-dom').Link;
-var PropTypes = require('prop-types');
-var api = require('../utils/api');
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import api from '../utils/api';
+import Loading from './Loading';
 
 require('../styles/MovieList.css');
-
-var Loading = require('./Loading');
 
 function MovieList(props) {
 	return (
@@ -51,7 +50,7 @@ MovieList.propTypes = {
 	movies: PropTypes.array.isRequired
 }
 
-class Home extends React.Component {
+class Home extends Component {
 	constructor(props) {
 		super(props);
 
@@ -93,4 +92,4 @@ class Home extends React.Component {
 	}
 }
 
-module.exports = Home;
+export default Home;

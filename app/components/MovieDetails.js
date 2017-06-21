@@ -1,12 +1,12 @@
-var React = require('react');
-var Link = require('react-router-dom').Link;
-var PropTypes = require('prop-types');
-var api = require('../utils/api');
-var QueryString = require('query-string');
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import api from '../utils/api';
+import QueryString from 'query-string';
 
-require('../styles/MovieDetails.css');
+import Loading from './Loading';
 
-var Loading = require('./Loading');
+import '../styles/MovieDetails.css';
 
 function MovieHeader(props) {
 	return (
@@ -126,7 +126,7 @@ Writers.propTypes = {
 	writers: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
-class MovieDetails extends React.Component {
+class MovieDetails extends Component {
 	constructor(props) {
 		super(props);
 
@@ -229,4 +229,4 @@ MovieDetails.propTypes = {
 	})
 }
 
-module.exports = MovieDetails;
+export default MovieDetails;

@@ -1,13 +1,14 @@
-var React = require('react');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-var Switch = ReactRouter.Switch;
+import React, { Component } from 'react';
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch
+} from 'react-router-dom';
 
-var Home = require('./Home');
-var MovieDetails = require('./MovieDetails');
+import Home from './Home';
+import MovieDetails from './MovieDetails';
 
-class App extends React.Component {
+class App extends Component {
 	render() {
 		return (
 			<Router>
@@ -24,4 +25,4 @@ class App extends React.Component {
 	}
 }
 
-module.exports = App;
+export default App;

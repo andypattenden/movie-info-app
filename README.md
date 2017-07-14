@@ -2,6 +2,9 @@
 
 ![Movie List Screenshot](https://raw.githubusercontent.com/andypattenden/movie-info-app/master/screenshot-movie-list.jpeg) ![Movie Details Screenshot](https://raw.githubusercontent.com/andypattenden/movie-info-app/master/screenshot-movie-details.jpeg)
 
+## Preview URL
+<https://react-imdb-top-10.firebaseapp.com/>
+
 ## Prerequisites
 Node and npm
 

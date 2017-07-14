@@ -1,5 +1,7 @@
 # Top 10 Movie Info App
 
+![Movie List Screenshot](https://raw.githubusercontent.com/andypattenden/movie-info-app/master/screenshot-movie-list.jpeg) ![Movie Details Screenshot](https://raw.githubusercontent.com/andypattenden/movie-info-app/master/screenshot-movie-details.jpeg)
+
 ## Prerequisites
 Node and npm
 

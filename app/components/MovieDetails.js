@@ -11,25 +11,25 @@ import '../styles/MovieDetails.css';
 function MovieHeader(props) {
 	return (
 		<header className='page-header'>
-			<div className='row'>
-				<h1 className='col-sm-9'>#{props.rank} {props.title} <small>({props.year})</small></h1>
-				<div className='col-sm-3'>
+			<div className='mdl-grid'>
+				<h1 className='mdl-cell mdl-cell--9-col-phone'>#{props.rank} {props.title} <small>({props.year})</small></h1>
+				<div className='mdl-cell mdl-cell--3-col-phone'>
 					Score: {props.rating}/10<br/>
 					{props.votes} votes
 				</div>
 			</div>
 
-			<div className='row'>
-				<div className='col-sm-3'>
+			<div className='mdl-grid'>
+				<div className='mdl-cell mdl-cell--3-col-phone'>
 					Certificate: {props.certificate}
 				</div>
-				<div className='col-sm-3'>
+				<div className='mdl-cell mdl-cell--3-col-phone'>
 					{props.runtime}
 				</div>
-				<div className='col-sm-3'>
+				<div className='mdl-cell mdl-cell--3-col-phone'>
 					{props.genre}
 				</div>
-				<div className='col-sm-3'>
+				<div className='mdl-cell mdl-cell--3-col-phone'>
 					{props.released}
 				</div>
 			</div>
@@ -51,8 +51,8 @@ MovieHeader.propTypes = {
 
 function MovieBody(props) {
 	return (
-		<section className='row'>
-			<div className='col-sm-4'>
+		<section className='mdl-grid'>
+			<div className='mdl-cell mdl-cell--4-col-phone'>
 				<figure>
 					<img
 						className='img-responsive'

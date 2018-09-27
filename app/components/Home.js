@@ -8,37 +8,41 @@ require('../styles/MovieList.css');
 
 function MovieList(props) {
 	return (
-		<ul className='list-unstyled movie-list'>
+		<ul className='movie-list'>
 		{props.movies.map(function(movie, index){
 
 			var rank = index + 1;
 			return (
-				<li key={movie.Title}>
-					<article className='row text-center'>
-						<div className='col-sm-1 rank'>
-							#{rank}
+				<li key={movie.Title} className='mdl-grid mdl-grid--no-spacing mdl-shadow--4dp'>
+
+					<div className='section__play-btn mdl-cell mdl-cell--3-col'>
+						<img alt={`${movie.Title} poster`} className='img-responsive' src={movie.Poster} />
+					</div>
+
+					<div className='mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone'>
+
+						<div className='mdl-card__title'>
+							<h4 className='mdl-card__title-text'>{movie.Title} <small>({movie.Year})</small></h4>
 						</div>
-						<div className='col-sm-2'>
-							<img alt={`${movie.Title} poster`} className='img-responsive' src={movie.Poster} />
-						</div>
-						<div className='col-sm-5'>
-							<h4>{movie.Title} <small>({movie.Year})</small></h4>
-						</div>
-						<div className='col-sm-2'>
+						
+						<div className='mdl-card__supporting-text'>
+							<p>{movie.Summary}</p>
 							Score: {movie.imdbRating}
 						</div>
-						<div className='col-sm-2'>
+
+						<div className='mdl-card__actions mdl-card--border'>
+				
 							<Link
-								className='button'
+								className='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
 								to={{
 									pathname: '/details',
 									search: `?movie=${movie.imdbID}&rank=${rank}`
 								}}
 							>
-								View Details &gt;
+								View Details
 							</Link>
 						</div>
-					</article>
+					</div>
 				</li>
 			)
 		})}
@@ -75,8 +79,10 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<header className='page-header'>
-					<h1 className='text-center'>IMDB Top 10 Rated Movies</h1>
+				<header className='mdl-layout__header'>
+					<div className="mdl-layout__header-row">
+					<h1 className='mdl-layout-title'>IMDB Top 10 Rated Movies</h1>
+					</div>
 				</header>
 
 				{

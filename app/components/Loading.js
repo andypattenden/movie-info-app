@@ -14,9 +14,10 @@ class Loading extends Component {
 
 	render() {
 		return (
-			<p className='loading'>
+			<div className='text-center'>
+				<div id="p2" className="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
 				{this.state.text}
-			</p>
+			</div>
 		)
 	}
 }

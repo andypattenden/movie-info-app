@@ -1,16 +1,9 @@
+.movie-list {
+	margin: 0 1em;
+	padding-left: 0;
+}
+
 .movie-list li {
-	padding: 1em;
-	border-top: 1px solid #ddd;
-}
-
-.movie-list h4 {
-	margin-top: 0;
-}
-
-.movie-list img {
-	margin: 0 auto 1em auto;
-}
-
-.movie-list li:first-child {
-	border: 0;
+	margin-bottom: 1em;
+	max-width: 860px;
 }
